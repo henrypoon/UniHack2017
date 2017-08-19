@@ -1,3 +1,9 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -7,7 +13,7 @@ import {
 } from 'react-native';
 import Root from './src/main';
 
-export default class TaxiApp extends Component {
+export default class parzi extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -33,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('TaxiApp', () => TaxiApp);
+AppRegistry.registerComponent('parzi', () => parzi);
