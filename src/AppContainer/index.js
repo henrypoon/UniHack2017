@@ -7,6 +7,7 @@ export default class AppContainer extends Component {
 	static propTypes = {
 		store: PropTypes.object.isRequired
 	}
+
 	render() {
 		return (
 

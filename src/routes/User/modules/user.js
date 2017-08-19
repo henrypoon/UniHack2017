@@ -4,7 +4,7 @@ import constants from './actionConstants';
 
 const ACTION_HANDLERS = {};
 const initialState = {
-	parked: true
+	parked: false
 };
 
 

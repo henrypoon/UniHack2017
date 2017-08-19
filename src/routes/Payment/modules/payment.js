@@ -1,13 +1,30 @@
 import update from 'react-addons-update';
+import axios from 'axios';
 import constants from './actionConstants';
 
 //constants
 const { SHOW_DATE_PICKER, CLOSE_DATE_PICKER, GET_DATE, GET_TIME } = constants;
 
 export function getDate(payload) {
-	return {
-		type: GET_DATE,
-		payload
+	// return {
+	// 	type: GET_DATE,
+	// 	payload
+	// };
+	return (dispatch) => {
+		axios.post('http://10.1.0.154:8000/api/allRecord', {
+			parkingLength: '20',
+			orderNum: '123'
+		})
+		.then((response) => {
+			console.log(response);
+			dispatch({
+				type: GET_DATE,
+				payload
+			});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 	};
 }
 

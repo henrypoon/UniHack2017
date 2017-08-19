@@ -5,8 +5,7 @@ import { Park } from './Park';
 
 class User extends React.Component {
 	renderUser() {
-		console.log(this.props.parked)
-		if ( !this.props.parked) {
+		if (!this.props.parked) {
 			return (
 				<View>
 					<NotPark />
