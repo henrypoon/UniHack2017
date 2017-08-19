@@ -77,7 +77,9 @@ const ACTION_HANDLERS = {
 const initialState = {
 	showDatePicker: false,
 	time: {},
-	date: {}
+	date: {},
+	carparks: {},
+	carparksID: {}
 };
 
 export function PaymentReducer(state = initialState, action) {

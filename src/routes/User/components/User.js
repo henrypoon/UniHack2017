@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { NotPark } from './NotPark';
+import { Park } from './Park';
 
 class User extends React.Component {
 	renderUser() {
-		console.log(this.props.parked);
-		if (this.props.parked !== true) {
+		console.log(this.props.parked)
+		if ( !this.props.parked) {
 			return (
 				<View>
 					<NotPark />
@@ -13,11 +14,12 @@ class User extends React.Component {
 			);
 		} else {
 			return (
-				<View><Text>Parking info</Text></View>
+				<View>
+					<Park />
+				</View>
 			);
 		}
 	}
-
 	render() {
 		return (
 			<View>

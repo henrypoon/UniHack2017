@@ -8,6 +8,8 @@ import {
 } from '../modules/payment';
 
 const mapStateToProps = (state) => ({
+  carparks: state.carparks,
+  carparksID: state.selectId,
   showDatePicker: state.payment.showDatePicker,
   date: state.payment.date || {},
   time: state.payment.time || {}

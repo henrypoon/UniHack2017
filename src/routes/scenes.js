@@ -4,8 +4,7 @@ import { Actions, Scene, Router } from 'react-native-router-flux';
 import HomeContainer from './Home/containers/HomeContainer';
 import UserContainer from './User/containers/UserContainer';
 import PaymentContainer from './Payment/containers/PaymentContainer';
-// import ListPage from './ListPage/component/ListPage'
-
+import ListPage from './ListPage/components/ListPage';
 
 const TabIcon = ({ selected, title }) => {
 	return (
@@ -32,7 +31,7 @@ const scenes = Actions.create(
 	<Scene key="List"title="List" icon={TabIcon}>
 		<Scene
 			key="ListPage"
-			component={HomeContainer}
+			component={ListPage}
 			title="ListPage"
 		/>
 	</Scene>

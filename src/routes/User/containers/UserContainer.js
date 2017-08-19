@@ -5,7 +5,7 @@ import {
 } from '../modules/user';
 
 const mapStateToProps = (state) => ({
-  parked: state.home.parked || {}
+  parked: state.user.parked
 });
 
 const mapActionCreators = {

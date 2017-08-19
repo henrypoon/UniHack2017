@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { RkButton } from 'react-native-ui-kitten';
-import TimePicker from './TimePicker';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import TimePicker from './TimePicker';
 
 class Payment extends React.Component {
 	render() {
@@ -17,7 +17,7 @@ class Payment extends React.Component {
 				Payment
 				</Text>
 				<RkButton rkType='success'>Accept</RkButton>
-				<RkButton rkType='danger'>Cancel</RkButton>
+				<RkButton rkType='danger' onPress={() => Actions.list()}>Cancel</RkButton>
 				<RkButton rkType='success' onPress={this.props.displayDatePicker}>Choose time</RkButton>
 				<View style={{ flex: 1 }}>
 					<TimePicker
