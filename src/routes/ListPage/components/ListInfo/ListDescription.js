@@ -25,12 +25,11 @@ class ListDescription extends Component {
     console.log(this.props.expanded)
     if (this.props.expanded) {
        return(
-        <RkButton rkType='success'>Navigate</RkButton>
+        <RkButton rkType='success xlarge'>Navigate</RkButton>
         )
 
     }
   }
-
    render() {
     const { id, title,price,address,image,num} = this.props.item;
     return (
@@ -40,7 +39,7 @@ class ListDescription extends Component {
         onPress={() => this.props.selectCarpark(id)}
       >
       <RkCard rkType='backImg'>
-          <Image rkCardImg source={image}/>
+          <Image rkCardImg source={image} />
           <View rkCardImgOverlay rkCardContent style={styles.overlay}>
             <RkText rkType='header inverseColor bold' style={{color:'white'}}>{title}</RkText>
             <RkText rkType='header2 inverseColor bold' style={{color:'white'}}>Number of valid slots: {num}</RkText>

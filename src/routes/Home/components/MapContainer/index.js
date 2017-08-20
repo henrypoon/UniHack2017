@@ -25,10 +25,6 @@ const MapContainer = ({ region, getInputData, getLocationPrediction, prediction,
           pinColor='green'
         />
       </MapView>
-      <SearchBox
-        getInputData={getInputData}
-        getLocationPrediction={getLocationPrediction}
-      />
     </View>
   );
 };
