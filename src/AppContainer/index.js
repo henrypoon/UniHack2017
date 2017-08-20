@@ -17,8 +17,6 @@ export default class AppContainer extends Component {
 		registerForNotifications();
 		Notifications.addListener((notification) => {
 			const { data: { text }, origin } = notification;
-			const t = JSON.stringify(notification.data.data.orderID).trim();
-			console.log(t);
 			setOrderID(1);
 			Actions.modal();
 			if (origin === 'received' && text) {
