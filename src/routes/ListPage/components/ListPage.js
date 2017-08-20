@@ -1,16 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Container } from 'native-base';
 import ListInfo from './ListInfo';
 import { connect } from 'react-redux';
+import styles from './ListInfo/ListStyle'
 
 class ListPage extends React.Component {
-
 	render() {
 		return (
-			<Container>
+			<View style={styles.ContainStyle}>
 				<ListInfo carparks={this.props.carparks} />
-			</Container>
+			</View>
 		);
 	}
 }

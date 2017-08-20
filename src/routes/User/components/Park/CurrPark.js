@@ -1,12 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { RkCard } from 'react-native-ui-kitten';
+import CountDown from './CountDown.js';
 
+export const CurrPark = ({carparks,time,DeSetParked}) => {
 
-export const CurrPark = () => {
   return (
-    <View>
-      <Text> caonima</Text>
-    </View>
+	<RkCard rkType='shadowed'>
+	  <CountDown />
+	</RkCard>
   );
 };
 

@@ -1,32 +1,33 @@
 import update from 'react-addons-update';
 import axios from 'axios';
 import constants from './actionConstants';
+import { Actions } from 'react-native-router-flux';
 
 //constants
-const { SHOW_DATE_PICKER, CLOSE_DATE_PICKER, GET_DATE, GET_TIME } = constants;
+const { SHOW_DATE_PICKER, CLOSE_DATE_PICKER, GET_DATE, GET_TIME, GET_ORDERID, SET_PARKED } = constants;
 
 export function getDate(payload) {
-	// return {
-	// 	type: GET_DATE,
-	// 	payload
-	// };
-	return (dispatch) => {
-		axios.post('http://10.1.0.154:8000/api/allRecord', {
-			parkingLength: '20',
-			orderNum: '123'
-		})
-		.then((response) => {
-			console.log(response);
-			dispatch({
-				type: GET_DATE,
-				payload
-			});
-		})
-		.catch((error) => {
-			console.log(error);
-		});
+	return {
+		type: GET_DATE,
+		payload
 	};
 }
+
+export function setOrderID(payload) {
+	return {
+		type: GET_ORDERID,
+		payload
+	};
+}
+
+export function userConfirm() {
+	Actions.user()
+	return {
+		type: SET_PARKED,
+		payload: true
+	};
+}
+
 
 export function getTime(payload) {
 	return {
@@ -60,6 +61,16 @@ function handleGetDate(state, action) {
 	});
 }
 
+
+function handleSetParked(state, action) {
+	return update(state, {
+		parked: {
+			$set: action.payload
+		}
+	});
+}
+
+
 function handleGetTime(state, action) {
 	return update(state, {
 		time: {
@@ -84,11 +95,21 @@ function handleCloseDatePicker(state, action) {
 	});
 }
 
+function handleGetOrderID(state, action) {
+	return update(state, {
+		orderID: {
+			$set: action.payload
+		}
+	});
+}
+
 const ACTION_HANDLERS = {
 	SHOW_DATE_PICKER: handleShowDatePicker,
 	CLOSE_DATE_PICKER: handleCloseDatePicker,
 	GET_DATE: handleGetDate,
-	GET_TIME: handleGetTime
+	GET_TIME: handleGetTime,
+	GET_ORDERID: handleGetOrderID,
+	SET_PARKED: handleSetParked
 };
 
 const initialState = {
@@ -96,7 +117,8 @@ const initialState = {
 	time: {},
 	date: {},
 	carparks: {},
-	carparksID: {}
+	carparksID: {},
+	orderID: {}
 };
 
 export function PaymentReducer(state = initialState, action) {

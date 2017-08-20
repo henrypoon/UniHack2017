@@ -8,7 +8,7 @@ import ListPage from './ListPage/components/ListPage';
 
 const TabIcon = ({ selected, title }) => {
 	return (
-		<Text style={{ color: selected ? 'red' : 'black' }}>{title}</Text>
+		<Text style={{ fontSize: 20, color: selected ? 'red' : 'black' }}>{title}</Text>
 	);
 };
 

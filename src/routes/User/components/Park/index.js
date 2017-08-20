@@ -4,12 +4,14 @@ import { Button, Icon } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import { Carinfo } from './Carinfo';
 import { CurrPark } from './CurrPark';
+import styles from './Userstyle';
 
-export const Park = () => {
+export const Park = ({carparks,time,DeSetParked}) => {
+	console.log(carparks)
   return (
-    <View >
+    <View style={ styles.Carinfostyle } >
       <Carinfo />
-      <CurrPark />
+      <CurrPark carparks={carparks} time={time}/>
     </View>
   );
 };

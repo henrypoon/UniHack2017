@@ -2,6 +2,8 @@
 	"name": "parzi",
 	"version": "0.0.1",
 	"private": true,
+	"description": "Hello Expo!",
+	"main": "node_modules/expo/AppEntry.js",
 	"browser": {
 		"net": "react-native-tcp"
 	},
@@ -21,6 +23,7 @@
 		"react": "16.0.0-alpha.12",
 		"react-addons-update": "^15.6.0",
 		"react-native": "0.47.1",
+		"react-native-countdown-circle": "^1.0.2",
 		"react-native-countdown-clock": "^2.0.2",
 		"react-native-maps": "^0.16.1",
 		"react-native-meteor": "^1.1.0",

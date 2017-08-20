@@ -48,7 +48,6 @@ export function getRegion(payload) {
 export function getLocationPrediction() {
 	return (dispatch) => {
 		const userInput = 'testing';
-		console.log(userInput);
 		dispatch({
 			type: GET_LOCATIONPREDICTION,
 			payload: userInput
@@ -89,7 +88,6 @@ function handleGetInputData(state, action) {
 }
 
 function handleGetRegion(state, action) {
-	console.log(action.payload);
 	return update(state, {
 		region: {
 			latitude: {

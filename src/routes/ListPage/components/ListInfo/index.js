@@ -1,45 +1,54 @@
 import React,{ Component } from 'react';
-import {Text,
-        ScrollView,
-        ListView,
-        StyleSheet
- } from 'react-native';
- import ListDescription from './ListDescription';
 import {
+  FlatList,
   Image,
-  Tile,
-  Title,
-  Subtitle,
-  Overlay,
-  Screen,
-  View
-} from '@shoutem/ui';
+  View,
+  TouchableOpacity
+} from 'react-native';
+import {
+  RkText,
+  RkCard, RkStyleSheet
+} from 'react-native-ui-kitten';
+import ListDescription from './ListDescription';
+
 
 
 class ListInfo extends Component {
-  componentWillMount() {
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
-    this.dataSource = ds.cloneWithRows(this.props.carparks);
+  constructor(props) {
+    super(props);
+
+    this.carparks = this.props.carparks;
+    this.renderItem = this._renderItem.bind(this);
   }
 
-  renderRow(carparks) {
-    return <ListDescription carparks={carparks}/>;
+  _renderItem({item}) {
+    return <ListDescription item={item}/>;
   }
 
   render(){
+
     return (
-      <Screen>
-        <ListView
-          dataSource={this.dataSource}
-          renderRow={this.renderRow} />
-        </Screen>
+        <FlatList
+        data={this.carparks}
+        renderItem={this.renderItem} 
+        style={styles.root}/>
+
     );
   }
 };
 
 
 
-
 export default ListInfo;
+
+let styles = RkStyleSheet.create(theme => ({
+  root: {
+    backgroundColor: theme.colors.screen.base
+  },
+  overlay: {
+    justifyContent: 'flex-end',
+  },
+  footer: {
+    width: 240
+  }
+}));

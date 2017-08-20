@@ -4,7 +4,9 @@ import {
   displayDatePicker,
   closeDatePicker,
   getTime,
-  getDate
+  getDate,
+  setOrderID,
+  userConfirm
 } from '../modules/payment';
 
 const mapStateToProps = (state) => ({
@@ -12,13 +14,18 @@ const mapStateToProps = (state) => ({
   carparksID: state.selectId,
   showDatePicker: state.payment.showDatePicker,
   date: state.payment.date || {},
-  time: state.payment.time || {}
+  time: state.payment.time || {},
+  orderID: state.payment.orderID,
+  parked: state.user.parked
+  
 });
 
 const mapActionCreators = {
   displayDatePicker,
   closeDatePicker,
   getDate,
-  getTime
+  getTime,
+  userConfirm,
+  setOrderID,
 };
 export default connect(mapStateToProps, mapActionCreators)(Payment);

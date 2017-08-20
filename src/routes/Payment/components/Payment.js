@@ -7,7 +7,6 @@ import TimePicker from './TimePicker';
 
 class Payment extends React.Component {
 	render() {
-		console.log(this.props.showDatePicker);
 		return (
 			<View style={styles.containers}>
         <Text
@@ -16,9 +15,9 @@ class Payment extends React.Component {
 				>
 				Payment
 				</Text>
-				<RkButton rkType='success'>Accept</RkButton>
-				<RkButton rkType='danger' onPress={() => Actions.list()}>Cancel</RkButton>
-				<RkButton rkType='success' onPress={this.props.displayDatePicker}>Choose time</RkButton>
+				<RkButton rkType='success xlarge' style={styles.buttonStyle} onPress={this.props.userConfirm}>Accept</RkButton>
+				<RkButton rkType='danger xlarge' style={styles.buttonStyle} onPress={() => Actions.pop()}>Cancel</RkButton>
+				<RkButton rkType='warning xlarge' style={styles.buttonStyle} onPress={this.props.displayDatePicker}>Choose time</RkButton>
 				<View style={{ flex: 1 }}>
 					<TimePicker
 						show={this.props.showDatePicker}
@@ -32,6 +31,9 @@ class Payment extends React.Component {
 }
 
 const styles = StyleSheet.create({
+	buttonStyle: {
+		top: 60
+	},
 	containers: {
 		flex: 1,
 		justifyContent: 'center',

@@ -1,22 +1,18 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import styles from './Userstyle';
 
 
 export const Carinfo = () => {
   return (
-    <View >
-        <Text>Plate Number: AUE67W</Text>
-        <Text>Manu: Toyota</Text>
-        <Text>Plate Number: AUE67W</Text>
-        <Text>Manu: Toyota</Text>
-        <Text>Plate Number: AUE67W</Text>
-        <Text>Manu: Toyota</Text>
-        <Text>Plate Number: AUE67W</Text>
-        <Text>Manu: Toyota</Text>
-        <Text>Plate Number: AUE67W</Text>
-        <Text>Manu: Toyota</Text>
-        <Text>Plate Number: AUE67W</Text>
-        <Text>Manu: Toyota</Text>
+    <View>
+        <View style={ styles.messageBox}>
+        <Text style={styles.messageBoxTitleText}>Plate Number: YPD640</Text>
+        </View>
+        <View style={ styles.messageBox}>
+        <Text style={styles.messageBoxTitleText}>Manu: Toyota</Text>
+        </View>
+
     </View>
   );
 };

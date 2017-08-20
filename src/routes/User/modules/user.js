@@ -1,8 +1,30 @@
 import update from 'react-addons-update';
 import constants from './actionConstants';
+import { Actions } from 'react-native-router-flux';
 
 
-const ACTION_HANDLERS = {};
+
+
+export function DeSetParked() {
+	Actions.home()
+	return {
+		type: DE_SET_PARKED,
+		payload: false
+	};
+}
+
+function handleDeSetParked(state, action) {
+	return update(state, {
+		parked: {
+			$set: action.payload
+		}
+	});
+}
+
+const ACTION_HANDLERS = {
+	DE_SET_PARKED: handleDeSetParked
+};
+
 const initialState = {
 	parked: false
 };
