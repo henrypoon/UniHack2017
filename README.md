@@ -9,3 +9,4 @@ Car plate number recognition is implemented by using Raspberry Pi with camera an
 Challenges I ran into
 HardWare: Car plate recognition. BackEnd: smoothly communicate with front end and hardware part Interchange information between front end and hardware part Front end: Balance between UI design and performance.
 
+https://devpost.com/software/parzi
